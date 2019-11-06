@@ -3,18 +3,18 @@ require 'yaml'
 require_relative 'les2_ex2'
 
 get '/' do
+  @breed = "Cat"
   erb :index
 end
 
 
 post '/' do
-  if params['name'] != "s"
-    @names = params['name']
-  puts 'Name first pet: ' + @names
-  end
+  @name = params['name']
+  @breed = "Cat"
+  puts "Name first pet: #{@names}"
   @animal = Animal.new(params['name'])
 
-
+  def chas
   if params[:feed]
     @animal.feed
   elsif params[:putToBed]
@@ -25,18 +25,15 @@ post '/' do
     @animal.toss
   elsif params[:wash]
     @animal.wash
-  elsif params[:help]
-    @animal.help
-  elsif params[:exit]
-    status = ["life" => 10,
-              "mood" => 100,
-              "hungry" => 100,
-              "sleepy" => 200]
-   File.open("animal.yaml", "w") { |file| file.write(status.to_yaml) }
   end
+
+  status = ["name" => @name,
+            "breed" => @breed,
+            "life" => @life,
+            "mood" => @mood,
+            "hungry" => @hungry,
+            "sleepy" => @sleepy]
+  File.open("animal.yaml", "w") { |file| file.write(status.to_yaml) }
+end
   erb :index
 end
-
-
-
-

@@ -1,18 +1,21 @@
 class Animal
+  attr_accessor :animal
+  attr_accessor :name
+
   def initialize(names)
+
     @name = names
     @breed = "Cat"
-    @life = 10
-    @mood = 100
-    @hungry = 100
-    @sleepy = 200
+    @life = 12
+    @mood = 120
+    @hungry = 120
+    @sleepy = 220
     @t = Time.new
   end
 
   def feed
     puts "Вы кормите #{@name}"
     @hungry += 25
-    time_is_coming
   end
 
   def putToBed
