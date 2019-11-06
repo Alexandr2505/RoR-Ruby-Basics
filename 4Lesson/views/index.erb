@@ -1,0 +1,29 @@
+<h1>Мы начинаем!</h1>
+
+<!DOCTYPE html>
+  <head>
+    <title>My Animals</title>
+  </head>
+<body>
+  
+<h1><%= @name %></h1>
+<form action="/" method="post">
+  <input type="text" name="name" value="s">
+  <button name="feed">кормить</button>
+  <button name="putToBed">убаюкивать</button>
+  <button name="walk">гулять</button>
+  <button name="toss">играть</button>
+  <button name="wash">мыть</button>
+  <button name="help">помощь</button>
+  <button name="exit"> выйти </button>
+</form>
+<p>
+	<% "Имя - #{@name}
+        Вид - #{@breed}
+        Здоровье - #{@life}
+        Настроение - #{@mood}
+        Голод - #{@hungry}
+        Сонливость - #{@sleepy}" %>
+</p>
+</body>
+</html>
