@@ -14,7 +14,6 @@ post '/' do
   puts "Name first pet: #{@names}"
   @animal = Animal.new(params['name'])
 
-  def chas
   if params[:feed]
     @animal.feed
   elsif params[:putToBed]
@@ -27,6 +26,7 @@ post '/' do
     @animal.wash
   end
 
+  @life = $life
   status = ["name" => @name,
             "breed" => @breed,
             "life" => @life,
@@ -34,6 +34,5 @@ post '/' do
             "hungry" => @hungry,
             "sleepy" => @sleepy]
   File.open("animal.yaml", "w") { |file| file.write(status.to_yaml) }
-end
   erb :index
 end

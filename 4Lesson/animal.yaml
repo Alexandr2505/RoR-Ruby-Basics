@@ -1,7 +1,7 @@
 ---
 - name: s
   breed: Cat
-  life: 
+  life: 155
   mood: 
   hungry: 
   sleepy: 

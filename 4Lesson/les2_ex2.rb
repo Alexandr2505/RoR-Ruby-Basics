@@ -1,5 +1,5 @@
+require 'yaml'
 class Animal
-  attr_accessor :animal
   attr_accessor :name
 
   def initialize(names)
@@ -16,6 +16,7 @@ class Animal
   def feed
     puts "Вы кормите #{@name}"
     @hungry += 25
+    $life = 155
   end
 
   def putToBed
